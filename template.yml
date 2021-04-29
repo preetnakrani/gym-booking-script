@@ -48,4 +48,4 @@ Resources:
         SimpleCWEEvent:
           Type: Schedule
           Properties:
-            Schedule: cron(0 * * * ? *)
+            Schedule: cron(53 0,18 * * ? *)

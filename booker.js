@@ -16,12 +16,7 @@ exports.scheduledEventLoggerHandler = async (event, context) => {
         if (process.env.mor === "no" && new Date().getHours() === 18) {
             return;
         }
-        try {
-            await hello();
-        } catch (e) {
-            return "Error occured while booking, may or maynot have booked";
-        }
-        
+        await hello();
     }
 };
 
