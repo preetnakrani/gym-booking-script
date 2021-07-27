@@ -1,12 +1,42 @@
+require("dotenv").config();
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
+const { bookSlot } = require("./slotBooker");
 
-const express = require('express')
-const booker = require('./booker.js');
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-express()
-    .use(express.static(path.join(__dirname, 'public')))
-    .set('views', path.join(__dirname, 'views'))
-    .set('view engine', 'ejs')
-    .get('/', (req, res) => res.render('pages/index'))
-    .listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.use(express.static(path.join(__dirname, "build")));
+
+app.post("/book", async (req, res, next) => {
+  try {
+    await bookSlot({
+      headless: process.env.NODE_ENV !== "development",
+      ...req.body,
+    });
+    return res.send(`${req.body.username}'s slot has been booked!`);
+  } catch (err) {
+    console.log(err);
+    return next(
+      new Error(
+        `Something went wrong! ${req.body.username}'s slot may or may not have been booked!`
+      )
+    );
+  }
+});
+
+app.use((err, _req, res, _next) => {
+  if (err) {
+    return res.send(err.message);
+  }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.listen(process.env.PORT || 9999, () => {
+  console.log(`Server started at http://localhost:${process.env.PORT || 9999}`);
+});
