@@ -20,13 +20,13 @@ Once you have cloned the project follow the steps:
 
 ## Project commands
 
-- `npm start` starts the node server at port 9999.
+- `npm start` starts the node server at port 9999 by running [app.js](./app.js)
 
 - `npm run client` starts the front end server.
 
 - `npm run build` builds the front-end and places it in the build folder.
 
-- `npm run server` runs the server with nodemon for development.
+- `npm run server` runs the server with nodemon for development by running [app.js](./app.js)
 
 - `npm run local` runs [controller.js](./api/controller.js) to run the script locally. To use this command you need to put your variables in [controller.js](./api/controller.js) to provide the configuration to book your slot. Follow the comments in [controller.js](./api/controller.js) to provide the essential parameters to book your preffered slot.
 
