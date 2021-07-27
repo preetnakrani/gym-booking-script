@@ -28,8 +28,8 @@ Once you have cloned the project follow the steps:
 
 - `npm run server` runs the server with nodemon for development.
 
-- `npm run local` runs controller.js to run the script locally. To use this command you need to put your variables in controller.js to provide the configuration to book your slot. Follow the comments in controller.js to provide the essential parameters to book your preffered slot.
+- `npm run local` runs [controller.js](./controller.js) to run the script locally. To use this command you need to put your variables in [controller.js](./controller.js) to provide the configuration to book your slot. Follow the comments in [controller.js](./controller.js) to provide the essential parameters to book your preffered slot.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](./LICENSE)
