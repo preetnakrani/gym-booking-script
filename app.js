@@ -38,6 +38,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.listen(process.env.PORT || 9999, () => {
-  console.log(`Server started at http://localhost:${process.env.PORT || 9999}`);
+app.listen(process.env.port || process.env.PORT || 9999, () => {
+  console.log(
+    `Server started at http://localhost:${
+      process.env.port || process.env.PORT || 9999
+    }`
+  );
 });
