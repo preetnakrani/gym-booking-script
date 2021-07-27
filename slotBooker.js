@@ -10,11 +10,14 @@ function sleep(milliseconds) {
 
 exports.bookSlot = async (options) => {
   // open browser
-  const browser = await puppeteer.launch({
+  let config = {
     headless: options.headless,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    executablePath: "/usr/bin/google-chrome-stable",
-  });
+  };
+  if (process.env.PUPPETEER_SKIP_DOWNLOAD === "true") {
+    config.executablePath = "/usr/bin/google-chrome-stable";
+  }
+  const browser = await puppeteer.launch(config);
 
   // open new page and go to webpage
   let page = await browser.newPage();
