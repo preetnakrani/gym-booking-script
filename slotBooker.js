@@ -13,6 +13,7 @@ exports.bookSlot = async (options) => {
   const browser = await puppeteer.launch({
     headless: options.headless,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    executablePath: "/usr/bin/google-chrome-stable",
   });
 
   // open new page and go to webpage
