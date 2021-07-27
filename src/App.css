@@ -109,6 +109,7 @@
   border-style: solid;
   padding: 5px;
   border-color: rgba(255, 0, 0, 30%);
+  border-width: 5px;
   transition: border-color 1000ms ease;
 }
 

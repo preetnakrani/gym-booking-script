@@ -16,6 +16,7 @@ app.post("/book", async (req, res, next) => {
       headless: process.env.NODE_ENV !== "development",
       ...req.body,
     });
+    console.log("slot booked");
     return res.send(`${req.body.username}'s slot has been booked!`);
   } catch (err) {
     console.log(err);
