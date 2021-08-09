@@ -2,7 +2,9 @@
 
 This project helps book UBC GYM SLOTS to ensure you get one before the session gets full.
 
-The project is hosted [here](http://ubcggymbooking-env.eba-m3sawabi.us-west-2.elasticbeanstalk.com/).
+The project is hosted [here](http://gym-app-download.us-west-2.elasticbeanstalk.com/). You can download the desktop client or book the slot in the cloud using the webversion.
+
+Demo of desktop client:
 
 The project can also be run locally. Follow the steps below to setup your local environment.
 
