@@ -5,6 +5,7 @@ This project helps book UBC GYM SLOTS to ensure you get one before the session g
 The project is hosted [here](http://gym-app-download.us-west-2.elasticbeanstalk.com/). You can download the desktop client or book the slot in the cloud using the webversion.
 
 Demo of desktop client:
+
 https://user-images.githubusercontent.com/44685953/128789024-a03a45f4-36b2-4480-bf10-10b1aec97f93.mp4
 
 The project can also be run locally. Follow the steps below to setup your local environment.
